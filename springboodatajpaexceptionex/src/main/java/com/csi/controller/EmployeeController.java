@@ -75,7 +75,7 @@ public class EmployeeController {
     }
     @GetMapping("sortbysalary")
     public ResponseEntity<Employee> sortBySalary(){
-        return ResponseEntity.ok(employeeService.findAll().stream().sorted(Comparator.comparing(Employee::getEmpSalary).reversed()).toList().get(1));
+        return ResponseEntity.ok(employeeService.findAll().stream().sorted(Comparator.comparing(Employee::getEmpSalary)).toList().get(1));
     }
     @GetMapping("/loaneligibility/{empId}")
     public ResponseEntity<String> loanEligibility(@PathVariable int empId){
